@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { ActivityIndicator, StatusBar, View } from 'react-native';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { RootNavigator } from './navigation/RootNavigator';
 import { initDatabase } from './database/db';
 import { setupPlayer } from './services/player';
@@ -31,9 +32,9 @@ export default function App() {
   }
 
   return (
-    <>
+    <SafeAreaProvider>
       <StatusBar barStyle="dark-content" />
       <RootNavigator />
-    </>
+    </SafeAreaProvider>
   );
 }

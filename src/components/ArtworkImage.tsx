@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, StyleSheet, Text, View, ViewStyle } from 'react-native';
+import { Image, ImageStyle, StyleProp, StyleSheet, Text, View, ViewStyle } from 'react-native';
 import { colors } from '../theme/colors';
 
 interface Props {
@@ -15,7 +15,7 @@ export function ArtworkImage({ path, size, radius = 6, style }: Props) {
     return (
       <Image
         source={{ uri: 'file://' + path }}
-        style={[{ width: size, height: size, borderRadius: radius, backgroundColor: colors.artworkPlaceholder }, style]}
+        style={[{ width: size, height: size, borderRadius: radius, backgroundColor: colors.artworkPlaceholder }, style as StyleProp<ImageStyle>]}
       />
     );
   }
